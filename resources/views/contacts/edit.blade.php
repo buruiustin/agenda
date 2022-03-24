@@ -184,8 +184,11 @@
     }
 
     $(document).on('click', '.plus', function() { 
-        var i =  $('#telefon_box .telefon_item:last').data('id');
-        i = i+1;
+        var i = 1;
+        if ($('#telefon_box').children().length > 0) {
+            i =  $('#telefon_box .telefon_item:last').data('id');
+            i = i + 1;
+        }
         
         $('#telefon_box').append(
             '<div class="telefon_item" data-id="'+ i +'">\
